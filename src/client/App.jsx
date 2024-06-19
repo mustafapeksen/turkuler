@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Song from "./components/Song";
-import Turkuler from "./database/Turkuler.json";
+import Turkuler from "../database/Turkuler.json";
 
 function App() {
   return (
