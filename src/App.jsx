@@ -5,7 +5,6 @@ import Song from "./components/Song";
 import Turkuler from "./database/Turkuler.json";
 
 function App() {
-  Math.random()
   return (
     <>
       <Header />
