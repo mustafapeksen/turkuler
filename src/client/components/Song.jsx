@@ -1,5 +1,4 @@
 function Song(props) {
-    console.log(props.video);
     return (
         <section>
             <iframe
