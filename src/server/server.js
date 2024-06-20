@@ -4,21 +4,20 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import cors from 'cors'
+import cors from 'cors';
 
 // JSON dosyasını import ederken assert ifadesi kullanıyoruz
 import Turkuler from './database/Turkuler.json' assert { type: 'json' };
 
 const app = express();
 const port = 3000;
+
 app.use(cors());
+app.use(bodyParser.json());
+
 // ESM ile __dirname kullanımı için gerekli kodlar
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-// Body-parser middleware'ini uygulamaya ekleyin
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 app.get('/random', (req, res) => {
   const random = Math.floor(Math.random() * Turkuler.length);
@@ -79,7 +78,6 @@ app.post('/turku', (req, res) => {
     }
   );
 });
-
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);

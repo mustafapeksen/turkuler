@@ -49,27 +49,11 @@
   },
   {
     "id": 4,
-    "name": "",
-    "singer": "",
-    "url": "",
-    "story": "",
-    "lyrics": "",
-    "storySource": {
-      "url": "",
-      "publication": ""
-    },
-    "lyricsSource": {
-      "url": "",
-      "publication": ""
-    }
-  },
-  {
-    "id": 5,
     "name": "Mihriban",
     "singer": "Musa Eroğlu",
     "url": "https://www.youtube.com/embed/e9ws_fdLm34?list=PLrUrpMUUzT4-EoeGMMCgyTKdtZ5KyVi6G",
-    "story": "Abdurrahim Karakoç’un kaleminden, Musa Eroğlu’nun sazının tellerinde hayat bulmuş türkümüz “MİHRİBAN”\nSene 1960 Karakoç’un sevdiğine kavuşamadığı, diğer bir ifade ile yürek yangınını betimlediği türküdür.\nBir düğün gecesi başlar her şey, kızımız düğün için Kahramanmaraş’tan  gelen misafirlerden biridir ve güzelliği ile büyülenen Karakoç’a türkü yazdıracak kadar iz bırakmıştır. Karakoç görür görmez vurulur kızımıza ve tanışmak ister.\nNihayetinde istediği de olur ve kızımızla tanışır. Kızımızın adı Şehribar’dır. Şimdi diyeceksiniz ki madem kızın adı Şehribar, o zaman türkünün adı niye “Mihriban”. Bunun ise sebebi, Karakoç, Şehribar’ın sergilediği tavır nedeniyle şefkatli merhametli anlamını taşıyan Mibriban’ı yakıştırır kızımıza. Sevdaya bakın isim dahi yakıştırmış sevdiğine! Masum sevgi bu olsa gerek, biz de Mihriban diyerek devam edelim. Karakoç Mihriban’ıyla gün geçirdikçe iyice ona bağlanır, sevdası alevlenir sarar artık içini. Bir gün Karakoç Mihriban’ı görmeye gider ama Mihriban Kahramanmaraş’a  gitmiştir ve bu gidiş Mihriban’ın sevdalısı Karakoç’u derinden etkilemiş ve yiyip içemez hale getirmiştir\nBu haline kayıtsız kalamayan ailesi Kahramanmaraş’a gidip kızı bulmak için yola çıkarlar. Nihayetinde, istenilen de olur, bulurlar kızı ve isterler ailesinden. Mibriban’ın ailesi, kızlarının küçük olduğunu söyler ama Karakoç’un ailesi ısrarcı olur. Bu durum karşısında Mihriban’ın ailesi Mihriban’ın nişanlı olduğunu yakında evleneceğini söyler. Bunun üzerine Karakoç’un ailesi geri döner asıl mesele ise burada başlamaktadır. Bu haberi Karakoç’a nasıl vereceklerdir? Karakoç sabırsızca ailesinden gelecek haberi bekler. Ailesi gelir ve Karakoç’a o haberi verir; kızın nişanlı olduğunu söylerler ve Karakoç  neye uğradığını şaşırır kalır.\nAcının alevi sarmıştı Karakoç’un kalbini, sıkıştırıyordu bedenini  ve buna rağmen ailesine bu konuyu tamamen kapattığını söyler. Dili bunu söylese de gönlü hiç susmaz, alır kalemi eline sarı saçlarına deli gönlümü bağlamışım çözülmüyor diyerek halen bağlı olduğunu gösteren mısralar yazar. Dili ile kalbi arasındaki zıtlıkta sevdadan değil midir zaten.\nTabiplerde ilaç yoktur yarama derken aslında asla bu konuyu kapatmadığını içinde kanayan açık yara oluğunu ifade etmez mi sizce de. Yar deyince kalem elden düşüyor kadar güzel anlatılmazdı sevda, ne yazsam kifayetsiz kalacak sanki aşk kağıda yazılmıyor diyerek sitem mi etmişti yoksa sevdasını mı anlatıyordu! Gözlerim görmüyor aklım şaşıyor öyle değil midir zaten büyük sevdalarda\nLambada titreyen alev üşüyor derken de güzel bir naiflik bırakmış türküsüne\nBu türküyü duyan Mihriban bir mektup yazar Karakoç’a “UNUTMAK KOLAY DEĞİL”  bunun üzerine Karakoç bir türkü daha yazar. Onlar kavuşamayınca sevdaları türkü olur dilden dile dolaşır…\n",
-    "lyrics": "Sarı saçlarına deli gönlümü\nBağlamışım, çözülmüyor, Mihriban\nMihriban\nAyrılıktan zor belleme ölümü, ölümü\nGörmeyince sezilmiyor, Mihriban\nMihriban, Mihriban\nAyrılıktan zor belleme ölümü, ölümü\nGörmeyince sezilmiyor, Mihriban\nMihriban, Mihriban\nYâr deyince kalem elden düşüyor\nGözlerim görmüyor, aklım şaşıyor\nŞaşıyor\nLambada titreyen alev üşüyor, üşüyor\nAşk kâğıda yazılmıyor, Mihriban\nMihriban, Mihriban\nLambada titreyen alev üşüyor, üşüyor\nAşk kâğıda yazılmıyor, Mihriban\nMihriban, Mihriban\nTabiplerde ilaç yoktur yarama\nAşk deyince ötesini arama\nArama\nHer nesnenin bir bitimi var ama, var ama\nAşka hudut çizilmiyor, Mihriban\nMihriban, Mihriban\nHer nesnenin bir bitimi var ama, var ama\nAşka hudut çizilmiyor, Mihriban\nMihriban, Mihriban",
+    "story": "Abdurrahim Karakoç’un kaleminden, Musa Eroğlu’nun sazının tellerinde hayat bulmuş türkümüz “MİHRİBAN”\n\nSene 1960 Karakoç’un sevdiğine kavuşamadığı, diğer bir ifade ile yürek yangınını betimlediği türküdür.\n\nBir düğün gecesi başlar her şey, kızımız düğün için Kahramanmaraş’tan  gelen misafirlerden biridir ve güzelliği ile büyülenen Karakoç’a türkü yazdıracak kadar iz bırakmıştır. Karakoç görür görmez vurulur kızımıza ve tanışmak ister.\n\nNihayetinde istediği de olur ve kızımızla tanışır. Kızımızın adı Şehribar’dır. Şimdi diyeceksiniz ki madem kızın adı Şehribar, o zaman türkünün adı niye “Mihriban”. Bunun ise sebebi, Karakoç, Şehribar’ın sergilediği tavır nedeniyle şefkatli merhametli anlamını taşıyan Mibriban’ı yakıştırır kızımıza. Sevdaya bakın isim dahi yakıştırmış sevdiğine! Masum sevgi bu olsa gerek, biz de Mihriban diyerek devam edelim. Karakoç Mihriban’ıyla gün geçirdikçe iyice ona bağlanır, sevdası alevlenir sarar artık içini. Bir gün Karakoç Mihriban’ı görmeye gider ama Mihriban Kahramanmaraş’a  gitmiştir ve bu gidiş Mihriban’ın sevdalısı Karakoç’u derinden etkilemiş ve yiyip içemez hale getirmiştir.\n\nBu haline kayıtsız kalamayan ailesi Kahramanmaraş’a gidip kızı bulmak için yola çıkarlar. Nihayetinde, istenilen de olur, bulurlar kızı ve isterler ailesinden. Mibriban’ın ailesi, kızlarının küçük olduğunu söyler ama Karakoç’un ailesi ısrarcı olur. Bu durum karşısında Mihriban’ın ailesi Mihriban’ın nişanlı olduğunu yakında evleneceğini söyler. Bunun üzerine Karakoç’un ailesi geri döner asıl mesele ise burada başlamaktadır. Bu haberi Karakoç’a nasıl vereceklerdir? Karakoç sabırsızca ailesinden gelecek haberi bekler. Ailesi gelir ve Karakoç’a o haberi verir; kızın nişanlı olduğunu söylerler ve Karakoç  neye uğradığını şaşırır kalır.\n\nAcının alevi sarmıştı Karakoç’un kalbini, sıkıştırıyordu bedenini  ve buna rağmen ailesine bu konuyu tamamen kapattığını söyler. Dili bunu söylese de gönlü hiç susmaz, alır kalemi eline sarı saçlarına deli gönlümü bağlamışım çözülmüyor diyerek halen bağlı olduğunu gösteren mısralar yazar. Dili ile kalbi arasındaki zıtlıkta sevdadan değil midir zaten.\n\nTabiplerde ilaç yoktur yarama derken aslında asla bu konuyu kapatmadığını içinde kanayan açık yara oluğunu ifade etmez mi sizce de. Yar deyince kalem elden düşüyor kadar güzel anlatılmazdı sevda, ne yazsam kifayetsiz kalacak sanki aşk kağıda yazılmıyor diyerek sitem mi etmişti yoksa sevdasını mı anlatıyordu! Gözlerim görmüyor aklım şaşıyor öyle değil midir zaten büyük sevdalarda.\n\nLambada titreyen alev üşüyor derken de güzel bir naiflik bırakmış türküsüne.\n\nBu türküyü duyan Mihriban bir mektup yazar Karakoç’a “UNUTMAK KOLAY DEĞİL”  bunun üzerine Karakoç bir türkü daha yazar. Onlar kavuşamayınca sevdaları türkü olur dilden dile dolaşır…\n",
+    "lyrics": "Sarı saçlarına deli gönlümü\nBağlamışım, çözülmüyor, Mihriban\nMihriban\n\nAyrılıktan zor belleme ölümü, ölümü\nGörmeyince sezilmiyor, Mihriban\nMihriban, Mihriban\n\nAyrılıktan zor belleme ölümü, ölümü\nGörmeyince sezilmiyor, Mihriban\nMihriban, Mihriban\n\nYâr deyince kalem elden düşüyor\nGözlerim görmüyor, aklım şaşıyor\nŞaşıyor\n\nLambada titreyen alev üşüyor, üşüyor\nAşk kâğıda yazılmıyor, Mihriban\nMihriban, Mihriban\n\nLambada titreyen alev üşüyor, üşüyor\nAşk kâğıda yazılmıyor, Mihriban\nMihriban, Mihriban\n\nTabiplerde ilaç yoktur yarama\nAşk deyince ötesini arama\nArama\n\nHer nesnenin bir bitimi var ama, var ama\nAşka hudut çizilmiyor, Mihriban\nMihriban, Mihriban\n\nHer nesnenin bir bitimi var ama, var ama\nAşka hudut çizilmiyor, Mihriban\nMihriban, Mihriban",
     "storySource": {
       "url": "https://edebialem.com/nisan-2022/mihriban-turkusunun-hikayesi/",
       "publication": "Edebi Alem"
@@ -77,6 +61,54 @@
     "lyricsSource": {
       "url": "https://www.musixmatch.com/lyrics/Musa-Ero%C4%9Flu-2/mihriban-1",
       "publication": "Musixmatch"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Firuze",
+    "singer": "Sezen Aksu",
+    "url": "https://www.youtube.com/embed/vQZPl4elYFc?list=PLrUrpMUUzT4-EoeGMMCgyTKdtZ5KyVi6G",
+    "story": "“Firuze”, Aysel Gürel’in kızı Müjde Ar’a yazılmış bir şarkıdır. Şarkının sözlerinde Firuze’nin hikayesi anlatılarak, ona duyulan derin sevgi ve özlem dile getirilir. Bu özel ve duygu yüklü tema, dinleyicilere şarkının ardında yatan duygusal derinliği daha da hissettirir.",
+    "lyrics": "Bir gün dönüp bakınca düşler\nİçmiş olursa yudum yudum yudum yıllarını\nAğla, ağla Firuze ağla\nAnlat bir zaman ne dayanılmaz güzellikte olduğunu\n\nKıskanır rengini baharda yeşiller\nSevda büyüsü gibisin sen Firuze\nSen nazlı bir çiçek, bir orman kuytusu\nÜzüm buğusu gibisin sen Firuze\n\nKıskanır rengini baharda yeşiller\nSevda büyüsü gibisin sen Firuze\nSen nazlı bir çiçek, bir orman kuytusu\nÜzüm buğusu gibisin sen Firuze\n\nDuru bir su gibi, bazen volkan gibi\nBazen bir deli rüzgar gibi\nGözlerinde telaş, yıllar sence yavaş\nAcelen ne bekle Firuze\n\nBir gün dönüp bakınca düşler\nİçmiş olursa yudum yudum yudum yıllarını\nAğla, ağla Firuze ağla\nAnlat bir zaman ne dayanılmaz güzellikte olduğunu\n\nAcılı bir bakış yerleşirse eğer\nKirpiğinin ucundan gözbebeğine\nHer şeyin bedeli var, güzelliğinin de\nBir gün gelir ödenir, öde Firuze\n\nAcılı bir bakış yerleşirse eğer\nKirpiğinin ucundan gözbebeğine\nHer şeyin bedeli var, güzelliğinin de\nBir gün gelir ödenir, öde Firuze\n\nDuru bir su gibi, bazen volkan gibi\nBazen bir deli rüzgar gibi\nGözlerinde telaş, yıllar sence yavaş\nAcelen ne bekle Firuze",
+    "storySource": {
+      "url": "https://halikarnasradyo.com.tr/sezen-aksu-firuze-sarkisinin-hikayesi/",
+      "publication": "Halikarnas Radyo"
+    },
+    "lyricsSource": {
+      "url": "https://lyrics.lyricfind.com/lyrics/sezen-aksu-firuze",
+      "publication": "LyricFind"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Tatlı Dile Güler Yüze",
+    "singer": "Neşet Ertaş",
+    "url": "https://www.youtube.com/embed/vyR_LFWSwHs?list=PLrUrpMUUzT4-EoeGMMCgyTKdtZ5KyVi6G",
+    "story": "",
+    "lyrics": "Tatlı dile, güler yüze\nDoyulur mu, doyulur mu?\nAşkınan bakışan göze\nDoyulur mu, doyulur mu?\n\nDoyulur mu, doyulur mu?\nCanana kıyılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?\n\nZülüflerin dökse yüze yâr badeyi sunsa bize\nLebleri meyime meze doyulur mu, doyulur mu?\nLebleri meyime meze doyulur mu, doyulur mu?\n\nDoyulur mu, doyulur mu?\nCanana kıyılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?\n\nHem bahara hemi yaza yârin ettikleri naza\nYâr aşkına çalan saza\nDoyulur mu, doyulur mu?\n\nDoyulur mu, doyulur mu?\nCanana kıyılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?\n\nGaribim geldik gitmeye muhabbetimiz bitmеye\nYârinen sohbet еtmeye\nDoyulur mu, doyulur mu?\nYârinen sohbet еtmeye\nDoyulur mu, doyulur mu?\n\nDoyulur mu, doyulur mu?\nCanana kıyılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?\n\nDoyulur mu, doyulur mu?\nCanana kıyılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?\nCananına kıyanlar\nHakk'ın kulu sayılır mı?",
+    "storySource": {
+      "url": "",
+      "publication": ""
+    },
+    "lyricsSource": {
+      "url": "https://lyrics.lyricfind.com/lyrics/neset-ertas-tatli-dile-guler-yuze",
+      "publication": "LyricFind"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Ceviz Ağacı",
+    "singer": "Cem Karaca",
+    "url": "https://www.youtube.com/embed/khD07C-YDL4?list=PLrUrpMUUzT4-EoeGMMCgyTKdtZ5KyVi6G",
+    "story": "Nazım Hikmet Vakfı’nın internet sitesinde yer alan bilgilere göre de şiir memleket özlemi temasıyla yazılmış.\n\nŞiirin yazım yılı TRT Arşiv’de yer alan bir görüntüden de teyit edilebiliyor. Şairin Ceviz Ağacı şiirini Azerbaycan’da bir programda okumadan önce, Azerbaycan Dergisi’nin dokuzuncu sayısını gösteriyor. Bu sayıda da 1958 tarihi görülüyor. \n\n90. doğum yılı olan 1992’de anısına çıkarılan Milliyet Sanat dergisinde de, Ceviz Ağacı şiirinin bir aşktan çok memleket özlemi mesajı içerdiğinden bahsediliyor. 1970’de Azerbaycanlı şair Resul Rıza da “Gülhane Parkında Bir Ceviz Ağacı Var” şiiriyle Hikmet’in memleket özlemini bir nevi tekrarlamış.\n\n",
+    "lyrics": "Başım köpük köpük bulut\nİçim dışım deniz\nBen bir ceviz ağacıyım, Gülhane parkında\nBudak budak, serhan serhan\nİhtiyar bir ceviz\nNe sen bunun farkındasın, ne polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nYapraklarım suda balık gibi, kıvıl kıvıl\nYapraklarım ipek mendil gibi, tiril tiril\nKopar ver gözlerimin gülüm yaşını sil\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nYapraklarım ellerimdir, tam yüz bin elim var\nYüz bin elle dokunurum sana İstanbula\nYapraklarım gözlerimdir şaşarak bakarım\nYüz bin gözle seyrederim seni İstanbul\nYüz bin yürek gibi çarpar, çarpar yapraklarım\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında\n\nBen bir ceviz ağacıyım Gülhane parkında\nBen bir ceviz ağacıyım Gülhane parkında\nNe sen bunun farkındasın ne de polis farkında\nNe sen bunun farkındasın ne de polis farkında",
+    "storySource": {
+      "url": "https://teyit.org/analiz/nazim-hikmet-ve-ceviz-agaci-siiri-iddiasi",
+      "publication": "Teyit"
+    },
+    "lyricsSource": {
+      "url": "https://lyrics.lyricfind.com/lyrics/cem-karaca-ceviz-agaci",
+      "publication": " LyricFind"
     }
   }
 ]
