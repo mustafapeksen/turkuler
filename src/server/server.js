@@ -40,7 +40,7 @@ app.get('/search', (req, res) => {
   }
 });
 
-app.post('/turku', (req, res) => {
+app.post('/turkuler', (req, res) => {
   // Veri doğrulama örneği, örnek olarak name ve lyrics zorunlu alanlar olsun
   if (!req.body.name || !req.body.lyrics) {
     return res.status(400).json({ error: 'Name and lyrics are required' });
@@ -78,6 +78,37 @@ app.post('/turku', (req, res) => {
     }
   );
 });
+
+//Put a Turkish Folk Song
+app.put('/turku/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const foundIndex = Turkuler.findIndex(turku => turku.id === id);
+
+  if (foundIndex === -1) {
+    return res.status(404).json({ error: 'Türkü bulunamadı' });
+  }
+
+  const updatedSong = {
+    ...Turkuler[foundIndex],
+    ...req.body,
+    id: id
+  };
+
+  Turkuler[foundIndex] = updatedSong;
+
+  fs.writeFile(
+    path.join(__dirname, 'database', 'Turkuler.json'),
+    JSON.stringify(Turkuler, null, 2),
+    (err) => {
+      if (err) {
+        console.error('Error writing file:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+      res.json(updatedSong);
+    }
+  );
+});
+
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
