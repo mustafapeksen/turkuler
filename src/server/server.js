@@ -80,7 +80,36 @@ app.post('/turkuler', (req, res) => {
 });
 
 //Put a Turkish Folk Song
-app.put('/turku/:id', (req, res) => {
+app.put('/turkuler/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const foundIndex = Turkuler.findIndex(turku => turku.id === id);
+
+  if (foundIndex === -1) {
+    return res.status(404).json({ error: 'Türkü bulunamadı' });
+  }
+
+  const updatedSong = {
+    ...Turkuler[foundIndex],
+    ...req.body,
+    id: id
+  };
+
+  Turkuler[foundIndex] = updatedSong;
+
+  fs.writeFile(
+    path.join(__dirname, 'database', 'Turkuler.json'),
+    JSON.stringify(Turkuler, null, 2),
+    (err) => {
+      if (err) {
+        console.error('Error writing file:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+      res.json(updatedSong);
+    }
+  );
+});
+//Patch a Turkish Folk Song
+app.patch('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const foundIndex = Turkuler.findIndex(turku => turku.id === id);
 

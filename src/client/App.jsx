@@ -3,14 +3,14 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Song from "./components/Song";
 import Turkuler from "../server/database/Turkuler.json";
-import PutSong from "./components/PutSong";
+import PatchSong from "./components/PatchSong";
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <PutSong />
+        <PatchSong />
         {Turkuler.map((turku) => (
           <Song
             key={turku.id}
