@@ -108,6 +108,7 @@ app.put('/turkuler/:id', (req, res) => {
     }
   );
 });
+
 //Patch a Turkish Folk Song
 app.patch('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
@@ -134,6 +135,30 @@ app.patch('/turkuler/:id', (req, res) => {
         return res.status(500).json({ error: 'Internal server error' });
       }
       res.json(updatedSong);
+    }
+  );
+});
+
+//Delete a Turkish Folk Song
+app.delete('/turku/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const foundIndex = Turkuler.findIndex(turku => turku.id === id);
+
+  if (foundIndex === -1) {
+    return res.status(404).json({ error: 'Türkü bulunamadı' });
+  }
+
+  Turkuler.splice(foundIndex, 1);
+
+  fs.writeFile(
+    path.join(__dirname, 'database', 'Turkuler.json'),
+    JSON.stringify(Turkuler, null, 2),
+    (err) => {
+      if (err) {
+        console.error('Error writing file:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+      res.json({ message: 'Türkü başarıyla silindi' });
     }
   );
 });
