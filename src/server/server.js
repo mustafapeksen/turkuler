@@ -24,9 +24,16 @@ app.get('/random', (req, res) => {
   res.json(Turkuler[random]);
 });
 
+app.get('/turkuler', (req, res) => {
+  res.json(Turkuler);
+});
+
 app.get('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const foundSong = Turkuler.find((turku) => turku.id === id);
+  if (!foundSong) {
+    return res.status(404).json({ error: 'Türkü bulunamadı' });
+  }
   res.json(foundSong);
 });
 
@@ -79,7 +86,7 @@ app.post('/turkuler', (req, res) => {
   );
 });
 
-//Put a Turkish Folk Song
+// Put a Turkish Folk Song
 app.put('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const foundIndex = Turkuler.findIndex(turku => turku.id === id);
@@ -109,7 +116,7 @@ app.put('/turkuler/:id', (req, res) => {
   );
 });
 
-//Patch a Turkish Folk Song
+// Patch a Turkish Folk Song
 app.patch('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const foundIndex = Turkuler.findIndex(turku => turku.id === id);
@@ -139,8 +146,8 @@ app.patch('/turkuler/:id', (req, res) => {
   );
 });
 
-//Delete a Turkish Folk Song
-app.delete('/turku/:id', (req, res) => {
+// Delete a Turkish Folk Song
+app.delete('/turkuler/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const foundIndex = Turkuler.findIndex(turku => turku.id === id);
 
@@ -162,7 +169,6 @@ app.delete('/turku/:id', (req, res) => {
     }
   );
 });
-
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);

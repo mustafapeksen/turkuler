@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function AddSong() {
     async function handleAdd(e) {
@@ -17,21 +18,11 @@ function AddSong() {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/turku', {
-                method: 'POST',
+            const response = await axios.post('http://localhost:3000/turkuler', newSong, {
                 headers: {
                     'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newSong),
+                }
             });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const data = await response.json();
-            console.log('Success:', data);
-            
             e.target.name.value = "";
             e.target.singer.value = "";
             e.target.url.value = "";
