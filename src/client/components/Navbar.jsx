@@ -3,9 +3,10 @@ import React from "react";
 function Navbar() {
     return <>
         <nav><ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/press">Press</a></li>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/singer">Şarkıcı</a></li>
+            <li><a href="/song">Şarkı</a></li>
+            <li><a href="/story">Hikayeler</a></li>
         </ul></nav>
     </>
 }

@@ -22,22 +22,7 @@ function App() {
         setTurkuler(Turkuler.filter(turku => turku.id !== id));
     };
 
-    return (
-        <div>
-            {Turkuler.map((turku) => (
-                <Song
-                    key={turku.id}
-                    id={turku.id}
-                    video={turku.url}
-                    name={turku.name}
-                    lyrics={turku.lyrics}
-                    story={turku.story}
-                    singer={turku.singer}
-                    onDelete={handleDelete}
-                />
-            ))}
-        </div>
-    );
+    return (<></>);
 }
 
 export default App;
