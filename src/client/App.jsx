@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Song from './components/Song'; 
-
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer'
 function App() {
     const [Turkuler, setTurkuler] = useState([]);
 
@@ -22,7 +23,11 @@ function App() {
         setTurkuler(Turkuler.filter(turku => turku.id !== id));
     };
 
-    return (<></>);
+    return (<>
+        <Header />
+        <Outlet />
+        <Footer />
+    </>);
 }
 
 export default App;
