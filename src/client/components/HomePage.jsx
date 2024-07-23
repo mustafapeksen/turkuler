@@ -45,7 +45,7 @@ function HomePage() {
                 </article>
                 <article>
                     <figure>
-                        <img src="" alt={randomSong.singer} />
+                        <img src={randomSong.photoURL} alt={randomSong.singer} />
                     </figure>
                     <h3>{randomSong.singer}</h3>
                 </article>
