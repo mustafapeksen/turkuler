@@ -22,9 +22,11 @@ function Song(props) {
     return (
         <section>
             <form>
-                <Button variant="outlined" onClick={deleteSong} startIcon={<ClearIcon />}>
-                    Delete
-                </Button>
+                {props.isAdmin && (
+                    <Button variant="outlined" onClick={deleteSong} startIcon={<ClearIcon />}>
+                        Delete
+                    </Button>
+                )}
                 <input type="number" name="id" id="id" hidden value={props.id} readOnly />
             </form>
 
