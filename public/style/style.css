@@ -33,7 +33,8 @@ main {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: "Merriweather", serif;
 }
 
@@ -168,7 +169,7 @@ iframe {
     width: 200px;
 }
 
-#home-page h3 {
+#home-page h4 {
     display: flex;
     justify-content: center;
     align-items: center;

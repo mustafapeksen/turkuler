@@ -29,10 +29,10 @@ function Navbar() {
                     <a href="/">Ana Sayfa</a>
                 </li>
                 <li className={currentPage === '/singer' ? 'current_page' : ''}>
-                    <a href="/singer">Şarkıcı</a>
+                    <a href="/singer">Sanatçılar</a>
                 </li>
-                <li className={currentPage === '/song' ? 'current_page' : ''}>
-                    <a href="/song">Şarkı</a>
+                <li className={currentPage === '/songs' ? 'current_page' : ''}>
+                    <a href="/songs">Şarkılar</a>
                 </li>
                 <li className={currentPage === '/stories' ? 'current_page' : ''}>
                     <a href="/stories">Hikayeler</a>
