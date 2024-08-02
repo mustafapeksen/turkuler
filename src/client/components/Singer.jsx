@@ -23,6 +23,7 @@ function Singer() {
                         }));
 
                         setSingers(enhancedSingerData);
+
                     }
                 } else {
                     console.error('API request failed:', response.statusText);
@@ -47,13 +48,44 @@ function Singer() {
         return <p>{error}</p>;
     }
 
+
+    const uniqueNames = singers.reduce((acc, item) => {
+
+        acc[item.name] = true;
+        return acc;
+    }, {});
+
+    // Nesnenin key'lerini array'e dönüştürerek unique değerleri elde ediyoruz
+    const uniqueNamesArray = Object.keys(uniqueNames);
+
+    console.log(uniqueNamesArray);
+
+    const uniquePhotoURL = singers.reduce((acc, item) => {
+
+        acc[item.photoURL] = true;
+        return acc;
+    }, {});
+
+    // Nesnenin key'lerini array'e dönüştürerek unique değerleri elde ediyoruz
+    const uniquePhotoURLArray = Object.keys(uniquePhotoURL);
+
+    console.log(uniquePhotoURLArray);
+
+    var uniqueList = [];
+
+    uniqueNamesArray.map((object, index) => { uniqueList.push({ id: index, name: object, photoURL: "" }) });
+
+    uniqueList.forEach((item, index) => {
+        uniqueList[index].photoURL = uniquePhotoURLArray[index];
+    });
+
     return (
-        <article>
-            {singers.length > 0 ? (
-                singers.map((singer) => (
-                    <figure key={singer.id}> {/* id'yi key olarak kullanın */}
+        <article id='singers'>
+            {uniqueList.length > 0 ? (
+                uniqueList.map((singer, index) => (
+                    <figure key={singer.id}>
                         {singer.photoURL && (
-                            <img src={singer.photoURL} alt={singer.name} />
+                            <img className='singer' src={singer.photoURL} alt={singer.name} />
                         )}
                         <h2>{singer.name}</h2>
                     </figure>

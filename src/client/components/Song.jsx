@@ -20,7 +20,7 @@ function Song(props) {
     }
 
     return (
-        <section>
+        <section className="song-list">
             <form>
                 {props.isAdmin && (
                     <Button variant="outlined" onClick={deleteSong} startIcon={<ClearIcon />}>
@@ -31,19 +31,17 @@ function Song(props) {
             </form>
 
             <iframe
-                width="560"
-                height="315"
                 src={props.video}
                 title={props.name + "-" + props.singer}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
             ></iframe>
-            <article>
+            <article className="song">
                 <h2>{props.name}</h2>
-                <p style={{ whiteSpace: 'pre-line' }}>{props.lyrics}</p>
+                <p >{props.lyrics}</p>
                 <h3>Hikayesi</h3>
-                <p style={{ whiteSpace: 'pre-line' }}>{props.story}</p>
+                <p id="story">{props.story}</p>
             </article>
         </section>
     );

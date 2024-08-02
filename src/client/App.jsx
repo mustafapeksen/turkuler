@@ -8,9 +8,10 @@ function App() {
     return (
         <>
             <Header />
-            <main>
-                <Outlet /> {/* Outlet'e isAdmin bilgisini geçiyoruz */}
-            </main>
+            <div className='container'>
+                <main>
+                    <Outlet />
+                </main></div>
             <Footer />
         </>
     );
