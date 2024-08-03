@@ -28,7 +28,7 @@ const router = createBrowserRouter([{
       element: <Singer /> // Singer component
     },
     {
-      path: "song", // Path for 'song' page
+      path: "songs", // Path for 'song' page
       element: <SongList isAdmin={isAdmin} /> // Song component
     },
     {
