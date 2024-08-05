@@ -33,7 +33,7 @@ function SongList({ isAdmin }) {
                     singer={turku.singer}
                     lyrics={turku.lyrics}
                     story={turku.story}
-                    isAdmin={isAdmin} // isAdmin prop'unu burada kullanıyoruz
+                    isAdmin={isAdmin}
                 />
             ))}
         </>

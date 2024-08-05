@@ -82,7 +82,7 @@ function Singer() {
     return (
         <article id='singers'>
             {uniqueList.length > 0 ? (
-                uniqueList.map((singer, index) => (
+                uniqueList.map((singer) => (
                     <figure key={singer.id}>
                         {singer.photoURL && (
                             <img className='singer' src={singer.photoURL} alt={singer.name} />

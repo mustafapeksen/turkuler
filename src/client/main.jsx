@@ -11,7 +11,7 @@ import HomePage from './components/HomePage.jsx';
 import Stories from './components/Stories.jsx';
 import SongList from './components/SongList.jsx';
 
-const isAdmin = false; // Admin bilgisini burada belirttik
+const isAdmin = true; // Admin bilgisini burada belirttik
 
 // Define the routes for the application using createBrowserRouter
 const router = createBrowserRouter([{

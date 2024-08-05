@@ -58,7 +58,7 @@ app.post('/turkuler', (req, res) => {
     name: req.body.name,
     singer: req.body.singer || '',
     url: req.body.url || '',
-    story: req.body.story || '',
+    story: req.body.story || 'Hikaye bulunamadı',
     lyrics: req.body.lyrics,
     storySource: {
       url: req.body.storySourceUrl || '',
