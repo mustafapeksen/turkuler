@@ -1,86 +1,165 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 
-function PutSong() {
-    const [song, setSong] = useState(null);
+function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
     const [formData, setFormData] = useState({
         id: '',
         name: '',
         singer: '',
         url: '',
         story: '',
-        storySourceUrl: '',
-        storySourcePublication: '',
+        storySource: {
+            url: '',
+            publication: ''
+        },
         lyrics: '',
-        lyricsSourceUrl: '',
-        lyricsSourcePublication: ''
+        lyricsSource: {
+            url: '',
+            publication: ''
+        }
     });
 
-    async function fetchSong(e) {
-        e.preventDefault();
-        const id = e.target.id.value;
-        try {
-            const response = await axios.get(`http://localhost:3000/turkuler/${id}`);
-            const songData = response.data;
-            setSong(songData);
+    useEffect(() => {
+        if (initialSongData) {
             setFormData({
-                id: songData.id,
-                name: songData.name,
-                singer: songData.singer,
-                url: songData.url,
-                story: songData.story,
-                storySourceUrl: songData.storySource.url,
-                storySourcePublication: songData.storySource.publication,
-                lyrics: songData.lyrics,
-                lyricsSourceUrl: songData.lyricsSource.url,
-                lyricsSourcePublication: songData.lyricsSource.publication
+                id: initialSongData.id || '',
+                name: initialSongData.name || '',
+                singer: initialSongData.singer || '',
+                url: initialSongData.url || '',
+                story: initialSongData.story || '',
+                storySource: initialSongData.storySource || { url: '', publication: '' },
+                lyrics: initialSongData.lyrics || '',
+                lyricsSource: initialSongData.lyricsSource || { url: '', publication: '' }
             });
-        } catch (error) {
-            console.error('Error:', error);
         }
-    }
+    }, [initialSongData]);
 
-    async function handleUpdate(e) {
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (name.includes("storySource") || name.includes("lyricsSource")) {
+            const [field, subfield] = name.split('.');
+            setFormData(prevState => ({
+                ...prevState,
+                [field]: {
+                    ...prevState[field],
+                    [subfield]: value
+                }
+            }));
+        } else {
+            setFormData(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        }
+    };
+
+    const handleUpdate = async (e) => {
+        e.preventDefault();
         const updatedSong = { ...formData };
         try {
-            const response = await axios.put(`http://localhost:3000/turku/${formData.id}`, updatedSong);
+            const response = await axios.put(`http://localhost:3000/turkuler/${songId}`, updatedSong);
             console.log('Success:', response.data);
-            setSong(response.data); // Güncellenmiş veriyi state'e kaydedin
+            if (onEdit) {
+                onEdit(response.data);
+            }
+            onClose(); // Close the dialog after successful update
         } catch (error) {
             console.error('Error:', error);
         }
-    }
-
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    }
+    };
 
     return (
-        <section>
-            <form onSubmit={fetchSong}>
-                <input type="number" name="id" id="id" placeholder="Türkü ID" required />
-                <input type="submit" value="Fetch Song" />
-            </form>
-
-            {song && (
-                <form onSubmit={handleUpdate}>
-                    <input type="text" name="name" id="name" placeholder="Türkünün İsmi" value={formData.name} onChange={handleChange} required />
-                    <input type="text" name="singer" id="singer" placeholder="Türkücü" value={formData.singer} onChange={handleChange} required />
-                    <input type="url" name="url" id="url" placeholder="Türkünün Url'i" value={formData.url} onChange={handleChange} />
-                    <textarea name="story" id="story" cols="30" rows="10" placeholder="Türkünün Hikayesi" value={formData.story} onChange={handleChange}></textarea>
-                    <input type="url" name="storySourceUrl" id="storySourceUrl" placeholder="Hikayenin Kaynağının Url'i" value={formData.storySourceUrl} onChange={handleChange} />
-                    <input type="text" name="storySourcePublication" id="storySourcePublication" placeholder="Hikayeyi Paylaşan Sitenin İsmi" value={formData.storySourcePublication} onChange={handleChange} />
-                    <textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="Türkünün Sözleri" value={formData.lyrics} onChange={handleChange} required></textarea>
-                    <input type="url" name="lyricsSourceUrl" id="lyricsSourceUrl" placeholder="Türkü Sözlerinin Kaynağının Url'i" value={formData.lyricsSourceUrl} onChange={handleChange} />
-                    <input type="text" name="lyricsSourcePublication" id="lyricsSourcePublication" placeholder="Türkü Sözlerini Paylaşan Sitenin İsmi" value={formData.lyricsSourcePublication} onChange={handleChange} />
-                    <input type="submit" value="Update Song" />
+        <Dialog open={open} onClose={onClose} fullWidth>
+            <DialogTitle>Update Song</DialogTitle>
+            <DialogContent>
+                <form onSubmit={handleUpdate} id="update-song-form">
+                    <TextField
+                        margin="dense"
+                        name="name"
+                        label="Türkünün İsmi"
+                        fullWidth
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="singer"
+                        label="Türkücü"
+                        fullWidth
+                        value={formData.singer}
+                        onChange={handleChange}
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="url"
+                        label="Türkünün Url'i"
+                        fullWidth
+                        value={formData.url}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="story"
+                        label="Türkünün Hikayesi"
+                        fullWidth
+                        multiline
+                        rows={4}
+                        value={formData.story}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="storySource.url"
+                        label="Hikayenin Kaynağının Url'i"
+                        fullWidth
+                        value={formData.storySource.url}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="storySource.publication"
+                        label="Hikayeyi Paylaşan Sitenin İsmi"
+                        fullWidth
+                        value={formData.storySource.publication}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="lyrics"
+                        label="Türkünün Sözleri"
+                        fullWidth
+                        multiline
+                        rows={4}
+                        value={formData.lyrics}
+                        onChange={handleChange}
+                        required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="lyricsSource.url"
+                        label="Türkü Sözlerinin Kaynağının Url'i"
+                        fullWidth
+                        value={formData.lyricsSource.url}
+                        onChange={handleChange}
+                    />
+                    <TextField
+                        margin="dense"
+                        name="lyricsSource.publication"
+                        label="Türkü Sözlerini Paylaşan Sitenin İsmi"
+                        fullWidth
+                        value={formData.lyricsSource.publication}
+                        onChange={handleChange}
+                    />
                 </form>
-            )}
-        </section>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={onClose} color="primary">Cancel</Button>
+                <Button type="submit" form="update-song-form" color="primary">Update</Button>
+            </DialogActions>
+        </Dialog>
     );
 }
 

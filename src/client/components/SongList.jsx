@@ -33,6 +33,7 @@ function SongList({ isAdmin }) {
                     singer={turku.singer}
                     lyrics={turku.lyrics}
                     story={turku.story}
+                    songData={turku}
                     isAdmin={isAdmin}
                 />
             ))}

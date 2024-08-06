@@ -180,3 +180,9 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+#edit-btn,
+#delete-btn {
+    margin: 1rem 2rem
+}
+

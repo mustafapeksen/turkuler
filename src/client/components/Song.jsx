@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import ClearIcon from '@mui/icons-material/Clear';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import PutSong from "./PutSong";
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 
 function Song(props) {
+    const [open, setOpen] = useState(false);
+    const handleEdit = (updatedSong) => {
+        setSongData(updatedSong);
+    };
+    const stopForm = (event) => { event.preventDefault(); }
+
     async function deleteSong(event) {
         event.preventDefault();
         const songId = props.id;
@@ -21,13 +29,21 @@ function Song(props) {
 
     return (
         <section className="song-list">
-            <form>
+            <form onSubmit={stopForm}>
                 {props.isAdmin && (
-                    <Button variant="outlined" onClick={deleteSong} startIcon={<ClearIcon />}>
+                    <Button id="delete-btn" variant="contained" color="error" onClick={deleteSong} startIcon={<ClearIcon />}>
                         Delete
                     </Button>
                 )}
                 <input type="number" name="id" id="id" hidden value={props.id} readOnly />
+                {props.isAdmin && (<Button id="edit-btn" variant="outlined" color="primary" startIcon={<ModeEditOutlineIcon />} onClick={() => setOpen(true)}>Edit</Button>)}
+                <PutSong
+                    songId={1}
+                    initialSongData={props.songData}
+                    onEdit={handleEdit}
+                    open={open}
+                    onClose={() => setOpen(false)}
+                />
             </form>
 
             <iframe
