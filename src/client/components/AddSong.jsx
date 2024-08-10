@@ -33,8 +33,7 @@ function AddSong(props) {
             props.onClose(); // Close the dialog after adding the song
         } catch (error) {
             console.error('Error:', error);
-            // Optionally, display error feedback to the user
-            // alert('Failed to add the song. Please try again.');
+            alert('Failed to add the song. Please try again.');
         }
     }
 
