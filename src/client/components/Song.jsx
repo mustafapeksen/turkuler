@@ -38,7 +38,7 @@ function Song(props) {
                 <input type="number" name="id" id="id" hidden value={props.id} readOnly />
                 {props.isAdmin && (<Button id="edit-btn" variant="outlined" color="primary" startIcon={<ModeEditOutlineIcon />} onClick={() => setOpen(true)}>Edit</Button>)}
                 <PutSong
-                    songId={1}
+                    songId={props.id}
                     initialSongData={props.songData}
                     onEdit={handleEdit}
                     open={open}

@@ -27,7 +27,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                 name: initialSongData.name || '',
                 singer: initialSongData.singer || '',
                 url: initialSongData.url || '',
-                story: initialSongData.story || '',
+                story: initialSongData.story || 'Hikaye bulunamadı!',
                 storySource: initialSongData.storySource || { url: '', publication: '' },
                 lyrics: initialSongData.lyrics || '',
                 lyricsSource: initialSongData.lyricsSource || { url: '', publication: '' }
@@ -60,10 +60,11 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         try {
             const response = await axios.put(`http://localhost:3000/turkuler/${songId}`, updatedSong);
             console.log('Success:', response.data);
+            onClose();// Close the dialog after successful update
+            location.reload(true);
             if (onEdit) {
                 onEdit(response.data);
             }
-            onClose(); // Close the dialog after successful update
         } catch (error) {
             console.error('Error:', error);
         }
