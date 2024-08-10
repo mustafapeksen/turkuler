@@ -7,6 +7,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         id: '',
         name: '',
         singer: '',
+        photoURL: '',
         url: '',
         story: '',
         storySource: {
@@ -26,6 +27,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                 id: initialSongData.id || '',
                 name: initialSongData.name || '',
                 singer: initialSongData.singer || '',
+                photoURL: initialSongData.photoURL || '',
                 url: initialSongData.url || '',
                 story: initialSongData.story || 'Hikaye bulunamadı!',
                 storySource: initialSongData.storySource || { url: '', publication: '' },
@@ -92,6 +94,14 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.singer}
                         onChange={handleChange}
                         required
+                    />
+                    <TextField
+                        margin="dense"
+                        name="photoURL"
+                        label="Sanatçının Fotoğraf URL'i" // Fotoğraf URL'i için alan eklendi
+                        fullWidth
+                        value={formData.photoURL}
+                        onChange={handleChange}
                     />
                     <TextField
                         margin="dense"
