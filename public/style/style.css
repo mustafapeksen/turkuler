@@ -186,3 +186,8 @@ footer {
     margin: 1rem 2rem
 }
 
+#add-btn {
+    position: fixed;
+    left: 85%;
+    top: 90%
+}

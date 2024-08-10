@@ -1,13 +1,20 @@
 import React from "react";
 import axios from "axios";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 
-function AddSong() {
+function AddSong(props) {
     async function handleAdd(e) {
         e.preventDefault();
 
         const newSong = {
             name: e.target.name.value,
             singer: e.target.singer.value,
+            photoURL: e.target.photoURL.value,
             url: e.target.url.value,
             story: e.target.story.value,
             storySourceUrl: e.target.storySourceUrl.value,
@@ -18,40 +25,128 @@ function AddSong() {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/turkuler', newSong, {
+            await axios.post('http://localhost:3000/turkuler', newSong, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
-            e.target.name.value = "";
-            e.target.singer.value = "";
-            e.target.url.value = "";
-            e.target.story.value = "";
-            e.target.storySourceUrl.value = "";
-            e.target.storySourcePublication.value = "";
-            e.target.lyrics.value = "";
-            e.target.lyricsSourceUrl.value = "";
-            e.target.lyricsSourcePublication.value = "";
+            props.onClose(); // Close the dialog after adding the song
         } catch (error) {
             console.error('Error:', error);
+            // Optionally, display error feedback to the user
+            // alert('Failed to add the song. Please try again.');
         }
     }
 
     return (
-        <section>
-            <form onSubmit={handleAdd}>
-                <input type="text" name="name" id="name" placeholder="Türkünün İsmi" required />
-                <input type="text" name="singer" id="singer" placeholder="Türkücü" required />
-                <input type="url" name="url" id="url" placeholder="Türkünün Url'i" />
-                <textarea name="story" id="story" cols="30" rows="10" placeholder="Türkünün Hikayesi"></textarea>
-                <input type="url" name="storySourceUrl" id="storySourceUrl" placeholder="Hikayenin Kaynağının Url'i " />
-                <input type="text" name="storySourcePublication" id="storySourcePublication" placeholder="Hikayeyi Paylaşan Sitenin İsmi" />
-                <textarea name="lyrics" id="lyrics" cols="30" rows="10" placeholder="Türkünün Sözleri" required></textarea>
-                <input type="url" name="lyricsSourceUrl" id="lyricsSourceUrl" placeholder="Türkü Sözlerinin Kaynağının Url'i " />
-                <input type="text" name="lyricsSourcePublication" id="lyricsSourcePublication" placeholder="Türkü Sözlerini Paylaşan Sitenin İsmi" />
-                <input type="submit" value="Submit" />
-            </form>
-        </section>
+        <React.Fragment>
+            <Dialog
+                open={props.open} onClose={props.onClose} fullWidth
+            >
+                <DialogTitle>Add Song</DialogTitle>
+                <DialogContent>
+                    <form onSubmit={handleAdd}>
+                        <TextField
+                            autoFocus
+                            required
+                            fullWidth
+                            margin="dense"
+                            type="text"
+                            name="name"
+                            id="name"
+                            label="Song Name"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            required
+                            type="text"
+                            name="singer"
+                            id="singer"
+                            label="Singer"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            type="url"
+                            name="photoURL"
+                            label="URL of Singer's Photo"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            required
+                            type="url"
+                            name="url"
+                            id="url"
+                            label="Song Youtube Embed URL"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            name="story"
+                            label="The Story Of The Song"
+                            multiline
+                            rows={4}
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            type="url"
+                            name="storySourceUrl"
+                            label="Story Source Publication URL"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            type="text"
+                            name="storySourcePublication"
+                            label="Story Source Publication"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            multiline
+                            rows={4}
+                            required
+                            name="lyrics"
+                            id="lyrics"
+                            label="Lyrics"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            type="url"
+                            name="lyricsSourceUrl"
+                            id="lyricsSourceUrl"
+                            label="Lyrics Source Publication URL"
+                        />
+
+                        <TextField
+                            fullWidth
+                            margin="dense"
+                            type="text"
+                            name="lyricsSourcePublication"
+                            id="lyricsSourcePublication"
+                            label="Lyrics Source Publication"
+                        />
+
+                        <DialogActions>
+                            <Button onClick={props.onClose}>Cancel</Button>
+                            <Button type="submit">Add Song</Button>
+                        </DialogActions>
+                    </form>
+                </DialogContent>
+            </Dialog>
+        </React.Fragment>
     );
 }
 

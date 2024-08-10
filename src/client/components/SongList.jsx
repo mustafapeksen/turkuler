@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Button } from "@mui/material";
+import PostAddIcon from '@mui/icons-material/PostAdd';
 import Song from "./Song";
+import AddSong from "./AddSong";
 
 function SongList({ isAdmin }) {
     const [Turkuler, setTurkuler] = useState([]);
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     useEffect(() => {
         fetchSongs();
@@ -37,6 +49,12 @@ function SongList({ isAdmin }) {
                     isAdmin={isAdmin}
                 />
             ))}
+            {isAdmin && (<Button id="add-btn" onClick={handleClickOpen} variant="outlined" color="success" size="large"><PostAddIcon /></Button>)}
+            <AddSong
+                open={open}
+                onClose={handleClose}
+                onOpen={handleClickOpen}
+            />
         </>
     );
 }
