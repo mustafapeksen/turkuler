@@ -3,6 +3,7 @@ import axios from "axios";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 
 function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
+    // Initialize state for form data with default values
     const [formData, setFormData] = useState({
         id: '',
         name: '',
@@ -21,6 +22,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         }
     });
 
+    // Update form data when initialSongData changes
     useEffect(() => {
         if (initialSongData) {
             setFormData({
@@ -37,9 +39,11 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         }
     }, [initialSongData]);
 
+    // Handle changes in form inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         if (name.includes("storySource") || name.includes("lyricsSource")) {
+            // Update nested objects for storySource and lyricsSource
             const [field, subfield] = name.split('.');
             setFormData(prevState => ({
                 ...prevState,
@@ -49,6 +53,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                 }
             }));
         } else {
+            // Update other fields
             setFormData(prevState => ({
                 ...prevState,
                 [name]: value
@@ -56,19 +61,20 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         }
     };
 
+    // Handle form submission and update song data
     const handleUpdate = async (e) => {
         e.preventDefault();
         const updatedSong = { ...formData };
         try {
             const response = await axios.put(`http://localhost:3000/turkuler/${songId}`, updatedSong);
             console.log('Success:', response.data);
-            onClose();// Close the dialog after successful update
-            location.reload(true);
+            onClose(); // Close the dialog after successful update
+            location.reload(true); // Reload the page to reflect changes (consider a better state management approach)
             if (onEdit) {
-                onEdit(response.data);
+                onEdit(response.data); // Notify parent component of the update
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error:', error); // Log error to the console
         }
     };
 
@@ -77,6 +83,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
             <DialogTitle>Update Song</DialogTitle>
             <DialogContent>
                 <form onSubmit={handleUpdate} id="update-song-form">
+                    {/* Text field for song name */}
                     <TextField
                         margin="dense"
                         name="name"
@@ -86,6 +93,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         onChange={handleChange}
                         required
                     />
+                    {/* Text field for singer */}
                     <TextField
                         margin="dense"
                         name="singer"
@@ -95,6 +103,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         onChange={handleChange}
                         required
                     />
+                    {/* Text field for photo URL */}
                     <TextField
                         margin="dense"
                         name="photoURL"
@@ -103,6 +112,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.photoURL}
                         onChange={handleChange}
                     />
+                    {/* Text field for song URL */}
                     <TextField
                         margin="dense"
                         name="url"
@@ -111,6 +121,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.url}
                         onChange={handleChange}
                     />
+                    {/* Text field for story */}
                     <TextField
                         margin="dense"
                         name="story"
@@ -121,6 +132,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.story}
                         onChange={handleChange}
                     />
+                    {/* Text field for story source URL */}
                     <TextField
                         margin="dense"
                         name="storySource.url"
@@ -129,6 +141,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.storySource.url}
                         onChange={handleChange}
                     />
+                    {/* Text field for story source publication */}
                     <TextField
                         margin="dense"
                         name="storySource.publication"
@@ -137,6 +150,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.storySource.publication}
                         onChange={handleChange}
                     />
+                    {/* Text field for lyrics */}
                     <TextField
                         margin="dense"
                         name="lyrics"
@@ -148,6 +162,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         onChange={handleChange}
                         required
                     />
+                    {/* Text field for lyrics source URL */}
                     <TextField
                         margin="dense"
                         name="lyricsSource.url"
@@ -156,6 +171,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                         value={formData.lyricsSource.url}
                         onChange={handleChange}
                     />
+                    {/* Text field for lyrics source publication */}
                     <TextField
                         margin="dense"
                         name="lyricsSource.publication"
@@ -167,7 +183,9 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
                 </form>
             </DialogContent>
             <DialogActions>
+                {/* Cancel button */}
                 <Button onClick={onClose} color="primary">Cancel</Button>
+                {/* Submit button to update song */}
                 <Button type="submit" form="update-song-form" color="primary">Update</Button>
             </DialogActions>
         </Dialog>

@@ -8,9 +8,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
 function AddSong(props) {
+    // Function to handle the form submission for adding a new song
     async function handleAdd(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default form submission behavior
 
+        // Create a new song object using the form data
         const newSong = {
             name: e.target.name.value,
             singer: e.target.singer.value,
@@ -25,15 +27,16 @@ function AddSong(props) {
         };
 
         try {
+            // Send a POST request to the server to add the new song
             await axios.post('http://localhost:3000/turkuler', newSong, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
-            props.onClose(); // Close the dialog after adding the song
+            props.onClose(); // Close the dialog after successfully adding the song
         } catch (error) {
-            console.error('Error:', error);
-            alert('Failed to add the song. Please try again.');
+            console.error('Error:', error); // Log any error that occurs
+            alert('Failed to add the song. Please try again.'); // Show an alert if there's an error
         }
     }
 
@@ -44,7 +47,9 @@ function AddSong(props) {
             >
                 <DialogTitle>Add Song</DialogTitle>
                 <DialogContent>
+                    {/* Form to input song details */}
                     <form onSubmit={handleAdd}>
+                        {/* Input field for song name */}
                         <TextField
                             autoFocus
                             required
@@ -56,6 +61,7 @@ function AddSong(props) {
                             label="Song Name"
                         />
 
+                        {/* Input field for singer's name */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -66,6 +72,7 @@ function AddSong(props) {
                             label="Singer"
                         />
 
+                        {/* Input field for the URL of the singer's photo */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -74,6 +81,7 @@ function AddSong(props) {
                             label="URL of Singer's Photo"
                         />
 
+                        {/* Input field for the song's YouTube embed URL */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -84,6 +92,7 @@ function AddSong(props) {
                             label="Song Youtube Embed URL"
                         />
 
+                        {/* Input field for the story of the song */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -93,6 +102,7 @@ function AddSong(props) {
                             rows={4}
                         />
 
+                        {/* Input field for the story source publication URL */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -101,6 +111,7 @@ function AddSong(props) {
                             label="Story Source Publication URL"
                         />
 
+                        {/* Input field for the story source publication */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -109,6 +120,7 @@ function AddSong(props) {
                             label="Story Source Publication"
                         />
 
+                        {/* Input field for the lyrics of the song */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -120,6 +132,7 @@ function AddSong(props) {
                             label="Lyrics"
                         />
 
+                        {/* Input field for the lyrics source publication URL */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -129,6 +142,7 @@ function AddSong(props) {
                             label="Lyrics Source Publication URL"
                         />
 
+                        {/* Input field for the lyrics source publication */}
                         <TextField
                             fullWidth
                             margin="dense"
@@ -138,6 +152,7 @@ function AddSong(props) {
                             label="Lyrics Source Publication"
                         />
 
+                        {/* Buttons for canceling or submitting the form */}
                         <DialogActions>
                             <Button onClick={props.onClose}>Cancel</Button>
                             <Button type="submit">Add Song</Button>
