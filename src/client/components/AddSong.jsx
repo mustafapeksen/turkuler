@@ -34,6 +34,7 @@ function AddSong(props) {
                 }
             });
             props.onClose(); // Close the dialog after successfully adding the song
+            location.reload(true); // Reload the page to reflect changes (consider a better state management approach)
         } catch (error) {
             console.error('Error:', error); // Log any error that occurs
             alert('Failed to add the song. Please try again.'); // Show an alert if there's an error
