@@ -20,19 +20,19 @@ const router = createBrowserRouter([{
   errorElement: <NotFound />, // Component to show when route is not found
   children: [ // Nested routes
     {
-      path: "", // Default route (home page)
+      path: "/", // Default route (home page)
       element: <HomePage /> // HomePage component
     },
     {
-      path: "singer", // Path for 'singer' page
+      path: "/singer", // Path for 'singer' page
       element: <Singer /> // Singer component
     },
     {
-      path: "songs", // Path for 'song' page
+      path: "/songs", // Path for 'song' page
       element: <SongList isAdmin={isAdmin} /> // Song component
     },
     {
-      path: "stories", // Path for 'stories' page
+      path: "/stories", // Path for 'stories' page
       element: <Stories /> // Stories component
     }]
 }]);
