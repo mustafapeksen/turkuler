@@ -18,7 +18,7 @@
 <h3 align="center">Turkuler</h3>
 
   <p align="center">
-   Bu proje, Türk sanat müziği şarkılarının veritabanını oluşturur ve kullanıcıya sunar. Aynı zamanda API sağlayarak diğer yazılımcıların bu projeden faydalanmasını sağlar.
+    This project creates and provides a database of Turkish folk music songs to users. It also provides an API, allowing other developers to benefit from this project.
     <br />
     <a href="https://github.com/mustafapeksen/turkuler"><strong>Explore the docs »</strong></a>
     <br />
@@ -64,7 +64,7 @@
 [![Product Name Screen Shot3][product-screenshot3]](./public/images/songs.png)
 [![Product Name Screen Shot4][product-screenshot4]](./public/images/stories.png)
 
-**Turkuler** projesi, Türk sanat müziği şarkılarının veritabanını oluşturarak kullanıcılarla buluşturur. Ayrıca, projenin API'ını sağlayarak diğer yazılımcıların da bu verilerden yararlanmasını sağlar. Proje, şarkı verilerini yönetmek ve görüntülemek için React kullanarak geliştirilmiştir.
+The **Turkuler** project creates a database of Turkish folk music songs and presents it to users. It also provides the project's API, allowing other developers to benefit from this data. The project is developed using React to manage and display song data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,18 +77,18 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Projenizi yerel ortamda kurmak için aşağıdaki adımları takip edin:
+Follow the steps below to set up the project in your local environment:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) ve [npm](https://www.npmjs.com/) gereklidir.
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) are required.
 
 ### Installation
 
-1. Reponun kopyasını alın
+1. Clone the repository
    ```sh
    git clone https://github.com/mustafapeksen/turkuler.git
-2. NPM paketlerini yükleyin
+2. Install NPM packages
    ```sh
    npm install
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -96,24 +96,24 @@ Projenizi yerel ortamda kurmak için aşağıdaki adımları takip edin:
 
 ## Usage
 
-Kurulum tamamlandıktan sonra, projeyi çalıştırmak için terminalde aşağıdaki komutları kullanın:
+After the installation is complete, use the following commands in the terminal to run the project:
 
-1. Sunucuyu başlatın
+1. Start the server
    ```sh
    nodemon ./src/server/server.js
    ```
-   veya
+   or
 
    ```sh
    node ./src/server/server.js
    ```
 
-2. Başka bir terminal açın (Viual Studio Code kullanıyorsanız terminal sekmesinde en sağdaki artı butonuna basın)
+2. Open another terminal (If you are using Visual Studio Code, click the plus button on the far right in the terminal tab)
    
     ```sh
    npm run dev
    ```
-   Daha sonra tarayıcınızda localhost:5173 adresine giderek projeyi yerel ortamda görüntüleyebilirsiniz.
+   Then, you can view the project locally by navigating to localhost:5173 in your browser.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
 
