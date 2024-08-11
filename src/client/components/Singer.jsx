@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 function Singer() {
     // State to hold the list of singers
@@ -53,7 +54,7 @@ function Singer() {
 
     // Display a loading message while data is being fetched
     if (loading) {
-        return <h1>Loading...</h1>;
+        return <Loading />;
     }
 
     // Display an error message if there was an error fetching data

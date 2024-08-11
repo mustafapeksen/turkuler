@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Story from "./Story";
+import Loading from "./Loading";
 
 function Stories() {
     // State to hold the list of songs
@@ -31,7 +32,7 @@ function Stories() {
 
     // Show a loading message while the data is being fetched
     if (isLoading) {
-        return <h1>Loading ...</h1>;
+        return <Loading />;
     } else {
         return (
             <>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 function HomePage() {
     // State to store the random song data and any potential error
     const [randomSong, setRandomSong] = useState(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // Function to fetch a random song from the server
     async function handleData() {
@@ -14,7 +16,6 @@ function HomePage() {
                     'Content-Type': 'application/json',
                 }
             });
-
             const songData = response.data;
             const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
 
@@ -24,6 +25,7 @@ function HomePage() {
 
             // Update the state with the fetched song data
             setRandomSong(songData);
+            console.log(loading);
         } catch (error) {
             console.error('Error:', error); // Log any error that occurs
             setError(error); // Update the error state
@@ -39,6 +41,7 @@ function HomePage() {
         // If the saved song is from today, use it. Otherwise, fetch a new song.
         if (savedDate === currentDate && savedSong) {
             setRandomSong(savedSong);
+            setLoading(false);
         } else {
             handleData();
         }
@@ -49,8 +52,12 @@ function HomePage() {
         return <p>Error: {error.message}</p>;
     }
 
-    // Display the random song details if available
-    if (randomSong) {
+
+    if (loading) {
+        // Show a loading message if the song data hasn't been loaded yet
+        return <Loading />;
+    } else {
+        // Display the random song details if available
         return (
             <section id='home-page'>
                 <h2>Günün Türküsü</h2>
@@ -89,9 +96,6 @@ function HomePage() {
                 </article>
             </section>
         );
-    } else {
-        // Show a loading message if the song data hasn't been loaded yet
-        return <h1>Loading ...</h1>;
     }
 }
 

@@ -4,12 +4,14 @@ import { Button } from "@mui/material";
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import Song from "./Song";
 import AddSong from "./AddSong";
+import Loading from "./Loading";
 
 function SongList({ isAdmin }) {
     // State to hold the list of songs (Turkuler)
     const [Turkuler, setTurkuler] = useState([]);
     // State to manage the visibility of the AddSong dialog
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     // Handler to open the AddSong dialog
     const handleClickOpen = () => {
@@ -36,6 +38,8 @@ function SongList({ isAdmin }) {
         } catch (error) {
             // Handle any errors that occur during the fetch operation
             console.error('Error fetching songs:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -44,46 +48,49 @@ function SongList({ isAdmin }) {
         // Update the state to remove the deleted song from the list
         setTurkuler(Turkuler.filter(turku => turku.id !== id));
     };
+    if (loading) {
+        return <Loading />
+    } else {
+        return (
+            <>
+                {/* Render the list of songs */}
+                {Turkuler.map((turku) => (
+                    <Song
+                        key={turku.id} // Unique key for each Song component
+                        onDelete={handleDelete} // Pass the handleDelete function to the Song component
+                        id={turku.id}
+                        video={turku.url}
+                        name={turku.name}
+                        singer={turku.singer}
+                        lyrics={turku.lyrics}
+                        story={turku.story}
+                        songData={turku}
+                        isAdmin={isAdmin} // Pass the isAdmin prop to determine edit/delete access
+                    />
+                ))}
 
-    return (
-        <>
-            {/* Render the list of songs */}
-            {Turkuler.map((turku) => (
-                <Song
-                    key={turku.id} // Unique key for each Song component
-                    onDelete={handleDelete} // Pass the handleDelete function to the Song component
-                    id={turku.id}
-                    video={turku.url}
-                    name={turku.name}
-                    singer={turku.singer}
-                    lyrics={turku.lyrics}
-                    story={turku.story}
-                    songData={turku}
-                    isAdmin={isAdmin} // Pass the isAdmin prop to determine edit/delete access
+                {/* Conditional rendering of the AddSong button for admin users */}
+                {isAdmin && (
+                    <Button
+                        id="add-btn"
+                        onClick={handleClickOpen} // Open the AddSong dialog when clicked
+                        variant="outlined"
+                        color="success"
+                        size="large"
+                    >
+                        <PostAddIcon /> {/* Icon for the AddSong button */}
+                    </Button>
+                )}
+
+                {/* AddSong dialog for adding a new song */}
+                <AddSong
+                    open={open} // Pass the dialog open state
+                    onClose={handleClose} // Pass the handler to close the dialog
+                    onOpen={handleClickOpen} // Pass the handler to open the dialog
                 />
-            ))}
-
-            {/* Conditional rendering of the AddSong button for admin users */}
-            {isAdmin && (
-                <Button
-                    id="add-btn"
-                    onClick={handleClickOpen} // Open the AddSong dialog when clicked
-                    variant="outlined"
-                    color="success"
-                    size="large"
-                >
-                    <PostAddIcon /> {/* Icon for the AddSong button */}
-                </Button>
-            )}
-
-            {/* AddSong dialog for adding a new song */}
-            <AddSong
-                open={open} // Pass the dialog open state
-                onClose={handleClose} // Pass the handler to close the dialog
-                onOpen={handleClickOpen} // Pass the handler to open the dialog
-            />
-        </>
-    );
+            </>
+        );
+    }
 }
 
 export default SongList;
