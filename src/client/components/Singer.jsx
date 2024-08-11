@@ -14,7 +14,7 @@ function Singer() {
         const fetchSingers = async () => {
             try {
                 // Make an API request to fetch singers
-                const response = await axios.get('https://turkuler.onrender.com/turkuler');
+                const response = await axios.get('https://turkuler-api.onrender.com//turkuler');
                 const serverData = response.data;
 
                 // Check if the response status is 200 (OK)

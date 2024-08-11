@@ -26,7 +26,7 @@ function Song(props) {
 
         try {
             // Send a DELETE request to the API to remove the song
-            await axios.delete(`https://turkuler.onrender.com/turkuler/${songId}`);
+            await axios.delete(`https://turkuler-api.onrender.com//turkuler/${songId}`);
             // Notify parent component of the deletion (if provided)
             if (props.onDelete) {
                 props.onDelete(songId);

@@ -14,7 +14,7 @@ function Stories() {
         const fetchSongs = async () => {
             try {
                 // Send a GET request to the API to fetch the list of songs
-                const response = await axios.get('https://turkuler.onrender.com/turkuler');
+                const response = await axios.get('https://turkuler-api.onrender.com//turkuler');
                 // Update the state with the fetched songs
                 setSongs(response.data);
             } catch (error) {
