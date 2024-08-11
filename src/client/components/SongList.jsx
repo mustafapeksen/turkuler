@@ -30,7 +30,7 @@ function SongList({ isAdmin }) {
     const fetchSongs = async () => {
         try {
             // Send a GET request to fetch the list of songs
-            const response = await axios.get('https://turkuler-api.onrender.com//turkuler');
+            const response = await axios.get('https://turkuler-api.onrender.com/turkuler');
             // Update the state with the fetched songs
             setTurkuler(response.data);
         } catch (error) {

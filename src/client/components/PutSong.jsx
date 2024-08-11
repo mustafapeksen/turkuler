@@ -66,7 +66,7 @@ function PutSong({ songId, initialSongData, onEdit, open, onClose }) {
         e.preventDefault();
         const updatedSong = { ...formData };
         try {
-            const response = await axios.put(`https://turkuler-api.onrender.com//turkuler/${songId}`, updatedSong);
+            const response = await axios.put(`https://turkuler-api.onrender.com/turkuler/${songId}`, updatedSong);
             console.log('Success:', response.data);
             onClose(); // Close the dialog after successful update
             location.reload(true); // Reload the page to reflect changes (consider a better state management approach)

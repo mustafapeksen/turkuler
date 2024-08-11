@@ -9,7 +9,7 @@ function HomePage() {
     // Function to fetch a random song from the server
     async function handleData() {
         try {
-            const response = await axios.get('https://turkuler-api.onrender.com//random', {
+            const response = await axios.get('https://turkuler-api.onrender.com/random', {
                 headers: {
                     'Content-Type': 'application/json',
                 }
