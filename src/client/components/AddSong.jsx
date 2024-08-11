@@ -28,7 +28,7 @@ function AddSong(props) {
 
         try {
             // Send a POST request to the server to add the new song
-            await axios.post('http://localhost:3000/turkuler', newSong, {
+            await axios.post('https://turkuler.onrender.com/turkuler', newSong, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
