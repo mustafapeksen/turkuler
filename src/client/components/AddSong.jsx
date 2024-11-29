@@ -79,6 +79,7 @@ function AddSong(props) {
                             margin="dense"
                             type="url"
                             name="photoURL"
+                            id="photoUrl"
                             label="URL of Singer's Photo"
                         />
 
